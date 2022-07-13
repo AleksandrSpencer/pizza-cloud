@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Pizza Cloud</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+</br>
+
+<h1>Design your pizza!</h1>
+<br/>
+<img th:src="@{/images/design.png}"/>
+<br/>
+<br/>
+<form method="POST" th:object="${pizza}">
+    <div class="grid">
+        <div class="ingredient-group" id="doughs">
+            <h3>Designate your dough:</h3>
+            <div th:each="ingredient : ${dough}">
+                <input th:field="*{ingredients}" type="checkbox"
+                       th:value="${ingredient.id}"/>
+                <span th:text="${ingredient.name}">INGREDIENT</span><br/>
+            </div>
+        </div>
+        <div class="ingredient-group" id="proteins">
+            <h3>Pick your protein:</h3>
+            <div th:each="ingredient : ${protein}">
+                <input th:field="*{ingredients}" type="checkbox"
+                       th:value="${ingredient.id}"/>
+                <span th:text="${ingredient.name}">INGREDIENT</span><br/>
+            </div>
+        </div>
+        <div class="ingredient-group" id="cheeses">
+            <h3>Choose your cheese:</h3>
+            <div th:each="ingredient : ${cheese}">
+                <input th:field="*{ingredients}" th:value="${ingredient.id}"
+                       type="checkbox"/>
+                <span th:text="${ingredient.name}">INGREDIENT</span><br/>
+            </div>
+        </div>
+        <div class="ingredient-group" id="veggies">
+            <h3>Determine your veggies:</h3>
+            <div th:each="ingredient : ${veggies}">
+                <input th:field="*{ingredients}" type="checkbox"
+                       th:value="${ingredient.id}"/>
+                <span th:text="${ingredient.name}">INGREDIENT</span><br/>
+            </div>
+        </div>
+
+    </div>
+    <div>
+        <h3>Name your pizza creation:</h3>
+        <br/>
+        <input type="text" th:field="*{name}"/>
+         <br/>
+        <br/>
+        <button style="background: #ECE8DD;
+        border: 4px solid rgba(82,6,6,0.57);
+        border-radius: 10px;
+        height: 40px;
+        width: 200px;"><h2>Submit Your Pizza</h2></button>
+        <span class="validationError"
+              th:if="${#fields.hasErrors('name')}"
+              th:errors="*{name}"name Error></span>
+
+    </div>
+</form>
+</body>
+</html>
