@@ -1,0 +1,53 @@
+
+/*
+Design by Free CSS Templates
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ECE8DD;
+    text-align: center;
+
+    font: normal large "Trebuchet MS", Arial, Helvetica, sans-serif;
+    color: #595858;
+}
+
+h1, h2, h3 {
+
+    /*text-align: center;*/
+    color: #520606;
+
+}
+img {width: 20%;
+    border: 6px solid rgba(82,6,6,0.57);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+
+    border-radius: 50%;}
+
+
+
+p {
+}
+ol {
+    background: #ff9999;
+    padding: 20px;
+}
+
+
+div.grid{
+
+    display: grid;
+    grid-template-columns: 15em 18em ;
+    grid-template-rows: 6em 6em ;
+    grid-gap: 5px;
+    justify-content: center;
+
+
+}
+
